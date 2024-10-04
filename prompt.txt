@@ -1,0 +1,36 @@
+<instructions>
+1. 仔细分析源文件中的函数或类，理解其功能和输入输出；源文件在下面的<source_file></source_file>标签中；
+2. 参考测试文件中的测试用例结构和语法，确保生成的测试用例与之保持一致；测试文件在下面的<test_file></test_file>标签中；
+3. 根据源文件中的函数或类的逻辑，生成更多的测试用例，以提高单元测试覆盖率。
+4. 确保生成的测试用例覆盖不同的情况，包括正常情况、边界情况和异常情况。
+5. 输出结果不应包含任何XML标签。
+</instructions>
+
+<input>
+<source_file>{source_file}</source_file>
+<test_file>{test_file}</test_file>
+</input>
+
+<output>
+生成的测试用例应直接输出，不包含任何XML标签。
+</output>
+
+<example>
+假设源文件中有一个函数`add(a, b)`，其功能是返回两个数的和。
+测试文件中可能包含以下测试用例：
+```python
+def test_add():
+    assert add(1, 2) == 3
+```
+根据上述指令，生成的测试用例可能包括：
+```python
+def test_add_positive_numbers():
+    assert add(3, 4) == 7
+
+def test_add_negative_numbers():
+    assert add(-1, -1) == -2
+
+def test_add_zero():
+    assert add(0, 5) == 5
+```
+</example>
